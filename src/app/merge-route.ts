@@ -1,10 +1,11 @@
+
 import { allRoutes } from "./routes";
 import { extensionRoute } from "./routes.ext";
- 
+
 extensionRoute.forEach((extRoute) => {
   mergeInnerRoute(extRoute, allRoutes);
 });
- 
+
 function mergeInnerRoute(extRoute: any, allroutes: any[]) {
   if (extRoute.pageType == "custom") {
     allroutes.push(extRoute);
@@ -13,8 +14,10 @@ function mergeInnerRoute(extRoute: any, allroutes: any[]) {
       return extRoute.pageType === targetRoute.pageType;
     });
     if (route) {
-      if (route.angular?.children) {
-        mergeRoutes(route.angular?.children, extRoute.angular?.children);
+      if (route.angular?.children || route.children) {
+        let sourceRoutes = route.angular?.children ?? route.children;
+        let targetRoutes = extRoute.angular?.children ?? extRoute.children;
+        mergeRoutes(sourceRoutes, targetRoutes);
       } else {
         Object.assign(route, extRoute);
       }
@@ -23,9 +26,10 @@ function mergeInnerRoute(extRoute: any, allroutes: any[]) {
     }
   }
 }
- 
+
 function mergeRoutes(allroutes: any[], extRoutes: any[]) {
   extRoutes.forEach((extRoute) => {
     mergeInnerRoute(extRoute, allroutes);
   });
 }
+

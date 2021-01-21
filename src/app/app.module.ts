@@ -13,6 +13,8 @@ import { ComponentFComponent } from './component-f/component-f.component';
 import { ComponentGComponent } from './component-g/component-g.component';
 import { ComponentHComponent } from './component-h/component-h.component';
 import { ComponentIComponent } from './component-i/component-i.component';
+import { ComponentJComponent } from './component-j/component-j.component';
+import { ComponentKComponent } from './component-k/component-k.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ComponentIComponent } from './component-i/component-i.component';
     ComponentFComponent,
     ComponentGComponent,
     ComponentHComponent,
-    ComponentIComponent
+    ComponentIComponent,
+    ComponentJComponent,
+    ComponentKComponent
   ],
   imports: [
     BrowserModule,
