@@ -32,62 +32,62 @@ export const allRoutes: RouteConfig[] = [
     path: '',
     pageType: Page.DEFAULT,
     angular: {
-    component:AppComponent
+      component: AppComponent
     }
   },
   {
     path: 'path_a',
     pageType: Page.PATH_A,
     angular: {
-      component:ComponentAComponent,
+      component: ComponentAComponent,
       data: { title: 'title.ComponentAComponent' },
-      children:[
+      children: [
         {
-        path: '',
-        pageType: Page.DEFAULT,
-        pathMatch: 'full',
-        redirectTo: 'path_b'
-      },
-      {
-        path: 'path_b',
-        pageType: Page.PATH_B,
-        component: ComponentBComponent,
-        data: { title: 'title.ComponentBComponent' },
-        children:[
-          {
-            path: 'path_c',
-            pageType: Page.PATH_C,
-            component: ComponentCComponent,
-      
-            data: { title: 'title.ComponentCComponent' },
-            children:[
-              {
-                path: 'path_g',
-                pageType: Page.PATH_G,
-                component: ComponentGComponent,
-                data: { title: 'title.ComponentGComponent' }
-              },
-              {
-                path: 'path_h',
-                pageType: Page.PATH_H,
-                component: ComponentHComponent,
-                data: { title: 'title.ComponentHComponent' }
-              },
-            ]
-          
+          path: '',
+          pageType: Page.DEFAULT,
+          pathMatch: 'full',
+          redirectTo: 'path_b'
+        },
+        {
+          path: 'path_b',
+          pageType: Page.PATH_B,
+          component: ComponentBComponent,
+          data: { title: 'title.ComponentBComponent' },
+          children: [
+            {
+              path: 'path_c',
+              pageType: Page.PATH_C,
+              component: ComponentCComponent,
 
-          },
-          {
-            path: 'path_i',
-            pageType: Page.PATH_I,
-            component: ComponentIComponent,
-            data: { title: 'title.ComponentIComponent' }
+              data: { title: 'title.ComponentCComponent' },
+              children: [
+                {
+                  path: 'path_g',
+                  pageType: Page.PATH_G,
+                  component: ComponentGComponent,
+                  data: { title: 'title.ComponentGComponent' }
+                },
+                {
+                  path: 'path_h',
+                  pageType: Page.PATH_H,
+                  component: ComponentHComponent,
+                  data: { title: 'title.ComponentHComponent' }
+                },
+              ]
 
-          }
 
-        ]
-      }
-    ]
+            },
+            {
+              path: 'path_i',
+              pageType: Page.PATH_I,
+              component: ComponentIComponent,
+              data: { title: 'title.ComponentIComponent' }
+
+            }
+
+          ]
+        }
+      ]
     },
   },
   {
@@ -96,23 +96,23 @@ export const allRoutes: RouteConfig[] = [
     angular: {
       component: ComponentDComponent,
       data: { title: 'title.newComponentDComponent' },
-          children:[
-          {
-            path: 'path_j',
-            pageType: Page.PATH_J,
-            component: ComponentJComponent,
-            data: { title: 'title.ComponentJComponent' },
-            children:[
-              {
-                path: 'path_k',
-                pageType: Page.PATH_K,
-                component: ComponentKComponent,
-                data: { title: 'title.ComponentKComponent' }
-              }
-            ]
-          },
+      children: [
+        {
+          path: 'path_j',
+          pageType: Page.PATH_J,
+          component: ComponentJComponent,
+          data: { title: 'title.ComponentJComponent' },
+          children: [
+            {
+              path: 'path_k',
+              pageType: Page.PATH_K,
+              component: ComponentKComponent,
+              data: { title: 'title.ComponentKComponent' }
+            }
+          ]
+        },
 
-        ]
+      ]
     },
   }
 ];

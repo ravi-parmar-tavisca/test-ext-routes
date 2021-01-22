@@ -4,6 +4,10 @@ import { RouterModule } from '@angular/router';
 
 import { MicroAppRouteConverter } from '@orxe-extension/route-helper';
 import { allRoutes } from './routes';
+import { extensionRoute } from './routes.ext';
+console.log(extensionRoute);
+console.log("allroutes",allRoutes);
+
 
 @NgModule({
   imports: [

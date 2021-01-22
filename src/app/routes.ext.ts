@@ -32,23 +32,23 @@ export const extensionRoute: RouteConfig[] = [
     path: '',
     pageType: Page.DEFAULT,
     angular: {
-    component:AppComponent
+      component: AppComponent
     }
   },
   {
-    path: 'path_a',
+    path: 'newpath_a',
     pageType: Page.PATH_A,
     angular: {
-      component:ComponentAComponent,
-      data: { title: 'title.ComponentAComponent' },
-      children:[
-      {
-        path: 'newpath_b',
-        pageType: Page.PATH_B,
-        component: ComponentBComponent,
-        data: { title: 'title.newComponentBComponent' }
-      }
-    ]
+      component: ComponentBComponent,
+      data: { title: 'title.newComponentAComponent' },
+      children: [
+        {
+          path: 'newpath_b',
+          pageType: Page.PATH_B,
+          component: ComponentBComponent,
+          data: { title: 'title.newComponentBComponent' },
+        }
+      ]
     },
   },
   {
@@ -57,23 +57,23 @@ export const extensionRoute: RouteConfig[] = [
     angular: {
       component: ComponentDComponent,
       data: { title: 'title.newComponentDComponent' },
-          children:[
-          {
-            path: 'newpath_j',
-            pageType: Page.PATH_J,
-            component: ComponentJComponent,
-            data: { title: 'title.newComponentJComponent' },
-            children:[
-              {
-                path: 'custom',
-                pageType: Page.CUSTOM,
-                component: ComponentCustomComponent,
-                data: { title: 'title.ComponentCustomComponent' }
-              },
-            ]
-          },
+      children: [
+        {
+          path: 'newpath_j',
+          pageType: Page.PATH_J,
+          component: ComponentJComponent,
+          data: { title: 'title.newComponentJComponent' },
+          children: [
+            {
+              path: 'custom',
+              pageType: Page.CUSTOM,
+              component: ComponentCustomComponent,
+              data: { title: 'title.ComponentCustomComponent' }
+            },
+          ]
+        },
 
-        ]
+      ]
     },
   },
   {
@@ -82,7 +82,7 @@ export const extensionRoute: RouteConfig[] = [
     angular: {
       component: ComponentCustomComponent,
       data: { title: 'title.ComponentCustomComponent' },
-      children:[
+      children: [
         {
           path: 'path_e',
           pageType: Page.PATH_E,
